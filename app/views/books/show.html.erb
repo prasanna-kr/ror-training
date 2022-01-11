@@ -1,0 +1,11 @@
+<h1>
+    <%= @book.name%>
+</h1>
+<p>
+    <%= @book.author%>
+</p>
+
+<ul>
+    <li><%= link_to "Edit", edit_book_path(@book) %></li>
+    <%= button_to "Destroy", book_path(@book), :method => :delete, :confirm => "are you sure?"%>
+</ul>

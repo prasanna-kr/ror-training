@@ -1,0 +1,21 @@
+<%= form_with(model: developer, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :beer_id %>
+    <%= form.text_field :beer_id %>
+  </div>
+  <% if developer.errors.any? %>
+    <div id="error_explanation">
+      <%= developer.errors.full_messages_for(:beer).join(', ') if developer.errors.has_key?(:beer) %>
+    </div>
+  <% end %>
+
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
