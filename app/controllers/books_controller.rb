@@ -15,6 +15,7 @@ class BooksController < ApplicationController
         @book = Book.new(book_params)
 
         if @book.save
+            BookMailer.book_email(@book).deliver_now
             redirect_to @book
         else
             render :new, status: :unprocessable_entity
